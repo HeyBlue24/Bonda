@@ -20,6 +20,20 @@
         left: 50%;
         transform: translate(-50%, -50%);
       }
+
+      #touchMeButton {
+        position: absolute;
+        top: 70%;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        background-color: #4caf50;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+      }
     </style>
   </head>
   <body>
@@ -29,16 +43,24 @@
       <h2 id="text1"></h2>
     </div>
 
-    <audio id="myAudio" controls preload="auto" autoplay muted>
+    <audio id="myAudio" controls preload="auto" muted>
       <source src="Kadhal-Ennulle-.mp3" type="audio/mp3">
       Your browser does not support the audio element.
     </audio>
+
+    <button id="touchMeButton">Touch me</button>
 
     <script src="developerfaizan.js"></script>
     <script>
       document.addEventListener('DOMContentLoaded', function() {
         var audio = document.getElementById('myAudio');
         audio.muted = false; // Unmute the audio (optional)
+
+        var touchMeButton = document.getElementById('touchMeButton');
+
+        touchMeButton.addEventListener('click', function() {
+          audio.play();
+        });
       });
     </script>
   </body>
