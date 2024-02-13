@@ -5,6 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>developerfaizan</title>
     <link rel="stylesheet" href="style.css" />
+    <style>
+      body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        margin: 0;
+      }
+
+      #myAudio {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    </style>
   </head>
   <body>
     <div class="bg_heart"></div>
@@ -13,27 +29,17 @@
       <h2 id="text1"></h2>
     </div>
 
-    <div class="image-container">
-      <button id="playButton" onclick="toggleAudio()">Play Audio</button>
-      <!-- Add your background image here -->
-      <img src="your-background-image.jpg" alt="Background Image" />
-    </div>
-
-    <audio id="myAudio" preload="auto">
+    <audio id="myAudio" controls preload="auto" autoplay muted>
       <source src="Kadhal-Ennulle-.mp3" type="audio/mp3">
       Your browser does not support the audio element.
     </audio>
 
     <script src="developerfaizan.js"></script>
     <script>
-      function toggleAudio() {
+      document.addEventListener('DOMContentLoaded', function() {
         var audio = document.getElementById('myAudio');
-        if (audio.paused) {
-          audio.play();
-        } else {
-          audio.pause();
-        }
-      }
+        audio.muted = false; // Unmute the audio (optional)
+      });
     </script>
   </body>
 </html>
