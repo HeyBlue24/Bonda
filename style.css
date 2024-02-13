@@ -42,3 +42,19 @@ body {
   color: white;
   font-family: cursive;
 }
+#playButton {
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 20px;
+  padding: 10px 20px;
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+#playButton:hover {
+  background-color: #2980b9;
+}
