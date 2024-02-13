@@ -60,7 +60,10 @@
     touchMeButton.addEventListener('click', function() {
       audio.currentTime = 0; // Start playing from the beginning
       audio.play();
-      textElement.innerText = textToDisplay; // Display the text on the screen
+      textElement.innerText = ""; // Clear any previous text
+      setTimeout(function() {
+        textElement.innerText = textToDisplay; // Display the text on the screen after audio starts playing
+      }, 500); // Adjust the delay time if needed
     });
   });
 </script>
