@@ -13,17 +13,23 @@
       <h2 id="text1"></h2>
     </div>
 
-    <audio id="myAudio" controls preload="auto" muted autoplay>
+    <button id="playButton" onclick="toggleAudio()">Play Audio</button>
+
+    <audio id="myAudio" preload="auto">
       <source src="Kadhal-Ennulle-.mp3" type="audio/mp3">
       Your browser does not support the audio element.
     </audio>
 
     <script src="developerfaizan.js"></script>
     <script>
-      document.addEventListener('DOMContentLoaded', function() {
+      function toggleAudio() {
         var audio = document.getElementById('myAudio');
-        audio.muted = false; // Unmute the audio (optional)
-      });
+        if (audio.paused) {
+          audio.play();
+        } else {
+          audio.pause();
+        }
+      }
     </script>
   </body>
 </html>
