@@ -12,6 +12,18 @@
     <div class="container">
       <h2 id="text1"></h2>
     </div>
+
+    <audio id="myAudio" controls preload="auto" muted autoplay>
+      <source src="Kadhal-Ennulle-.mp3" type="audio/mp3">
+      Your browser does not support the audio element.
+    </audio>
+
     <script src="developerfaizan.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        var audio = document.getElementById('myAudio');
+        audio.muted = false; // Unmute the audio (optional)
+      });
+    </script>
   </body>
 </html>
