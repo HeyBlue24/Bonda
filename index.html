@@ -12,7 +12,6 @@
         justify-content: center;
         height: 100vh;
         margin: 0;
-        visibility: hidden; /* initially hide the body */
       }
 
       #myAudio {
@@ -51,18 +50,22 @@
     <script src="developerfaizan.js"></script>
     <script>
       document.addEventListener('DOMContentLoaded', function() {
-          setTimeout(function() {
-              var audio = document.getElementById('myAudio');
-              audio.muted = false; // Unmute the audio (optional)
+        var audio = document.getElementById('myAudio');
+        audio.muted = false; // Unmute the audio (optional)
 
-              var touchMeButton = document.getElementById('touchMeButton');
+        var touchMeButton = document.getElementById('touchMeButton');
 
-              touchMeButton.addEventListener('click', function() {
-                  audio.play();
-              });
+        // Function to reset CSS and audio
+        function resetStylesAndAudio() {
+          audio.currentTime = 0; // Reset audio to the beginning
+          audio.pause(); // Pause the audio
+          // Reset any CSS styles here if needed
+        }
 
-              document.body.style.visibility = "visible"; // Reveal the body after 5 seconds
-          }, 5000); // 5000 milliseconds = 5 seconds
+        touchMeButton.addEventListener('click', function() {
+          resetStylesAndAudio(); // Reset styles and audio
+          audio.play(); // Play the audio
+        });
       });
     </script>
   </body>
