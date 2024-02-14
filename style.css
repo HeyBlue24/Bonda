@@ -20,7 +20,7 @@
     background-image: url("https://i.postimg.cc/SKDpTJkh/Untitled-design.jpg");
     background-size: cover;
     z-index: -1;
-    animation: untoldcoding 180s 1 ease-in-out;
+    animation: untoldcoding 100s 1 ease-in-out;
   }
   @keyframes untoldcoding {
     0% {
