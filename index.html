@@ -12,6 +12,7 @@
         justify-content: center;
         height: 100vh;
         margin: 0;
+        visibility: hidden; /* initially hide the body */
       }
 
       #myAudio {
@@ -50,16 +51,19 @@
     <script src="developerfaizan.js"></script>
     <script>
       document.addEventListener('DOMContentLoaded', function() {
-        var audio = document.getElementById('myAudio');
-        audio.muted = false; // Unmute the audio (optional)
+          setTimeout(function() {
+              var audio = document.getElementById('myAudio');
+              audio.muted = false; // Unmute the audio (optional)
 
-        var touchMeButton = document.getElementById('touchMeButton');
+              var touchMeButton = document.getElementById('touchMeButton');
 
-        touchMeButton.addEventListener('click', function() {
-          audio.play();
-        });
+              touchMeButton.addEventListener('click', function() {
+                  audio.play();
+              });
+
+              document.body.style.visibility = "visible"; // Reveal the body after 5 seconds
+          }, 5000); // 5000 milliseconds = 5 seconds
       });
     </script>
   </body>
 </html>
-
