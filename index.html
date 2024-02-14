@@ -50,22 +50,16 @@
     <script src="developerfaizan.js"></script>
     <script>
       document.addEventListener('DOMContentLoaded', function() {
-        var audio = document.getElementById('myAudio');
-        audio.muted = false; // Unmute the audio (optional)
+        setTimeout(function() {
+          var audio = document.getElementById('myAudio');
+          audio.muted = false; // Unmute the audio (optional)
 
-        var touchMeButton = document.getElementById('touchMeButton');
+          var touchMeButton = document.getElementById('touchMeButton');
 
-        // Function to reset CSS and audio
-        function resetStylesAndAudio() {
-          audio.currentTime = 0; // Reset audio to the beginning
-          audio.pause(); // Pause the audio
-          // Reset any CSS styles here if needed
-        }
-
-        touchMeButton.addEventListener('click', function() {
-          resetStylesAndAudio(); // Reset styles and audio
-          audio.play(); // Play the audio
-        });
+          touchMeButton.addEventListener('click', function() {
+            audio.play();
+          });
+        }, 5000); // Delay execution for 5 seconds (5000 milliseconds)
       });
     </script>
   </body>
