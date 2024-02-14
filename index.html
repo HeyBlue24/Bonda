@@ -1,64 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>developerfaizan</title>
-    <link rel="stylesheet" href="style.css" />
-    <style>
-      body {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 100vh;
-        margin: 0;
-      }
-
-      #myAudio {
-        display: none; /* Hide the default audio controls */
-      }
-
-      #touchMeButton {
-        position: absolute;
-        top: 70%;
-        left: 50%;
-        transform: translateX(-50%);
-        padding: 10px 20px;
-        font-size: 16px;
-        cursor: pointer;
-        background-color: #4caf50;
-        color: #fff;
-        border: none;
-        border-radius: 5px;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="bg_heart"></div>
-
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Animated Background</title>
+<style>
+  html,
+  body {
+    margin: 0;
+    height: 100%;
+  }
+  .bg_heart {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-image: url("https://i.postimg.cc/SKDpTJkh/Untitled-design.jpg");
+    background-size: cover;
+    z-index: -1;
+    animation: untoldcoding 55s 1 ease-in-out;
+  }
+  @keyframes untoldcoding {
+    0% {
+      background-image: url("https://i.postimg.cc/k4YjCZvp/IMG-2768.jpg");
+    }
+    25% {
+      background-image: url("https://i.postimg.cc/NMjNWYmX/2269-DF21-EA16-4469-8-D2-F-EB4-F9775794-E.jpg");
+    }
+    50% {
+      background-image: url("https://i.postimg.cc/G2fnRV4g/Untitled-design.jpg");
+    }
+    75% {
+      background-image: url("https://i.postimg.cc/Kcd4rs05/Untitled-design.png");
+    }
+    100% {
+      background-image: url("https://i.postimg.cc/SKDpTJkh/Untitled-design.jpg");
+    }
+  }
+  .container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    color: white;
+    font-family: cursive; /* Change this line to use your desired font */
+  }
+  .image-container {
+    position: relative;
+    display: inline-block;
+  }
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+</style>
+</head>
+<body>
+  <div class="bg_heart">
     <div class="container">
-      <h2 id="text1"></h2>
+      <div class="image-container">
+        <button id="playButton">Play</button>
+        <img src="https://i.postimg.cc/k4YjCZvp/IMG-2768.jpg" alt="Heart Image">
+      </div>
     </div>
-
-    <audio id="myAudio" controls="false" preload="auto" muted>
-      <source src="Kadhal-Ennulle-.mp3" type="audio/mp3">
-      Your browser does not support the audio element.
-    </audio>
-
-    <button id="touchMeButton">Touch me💙</button>
-
-    <script src="developerfaizan.js"></script>
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        var audio = document.getElementById('myAudio');
-        audio.muted = false; // Unmute the audio (optional)
-
-        var touchMeButton = document.getElementById('touchMeButton');
-
-        touchMeButton.addEventListener('click', function() {
-          audio.play();
-        });
-      });
-    </script>
-  </body>
+  </div>
+  <script>
+    document.getElementById('playButton').addEventListener('click', function() {
+      var bgHeart = document.querySelector('.bg_heart');
+      bgHeart.style.animationPlayState = 'running';
+    });
+  </script>
+</body>
 </html>
