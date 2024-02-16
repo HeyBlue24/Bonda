@@ -31,6 +31,25 @@
         border: none;
         border-radius: 5px;
       }
+
+      .heart {
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        background-color: red;
+        transform: rotate(-45deg);
+        animation: grow 0.5s ease-in-out;
+        position: absolute;
+      }
+
+      @keyframes grow {
+        0% {
+          transform: scale(0);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
     </style>
   </head>
   <body>
@@ -57,7 +76,22 @@
 
         touchMeButton.addEventListener('click', function() {
           audio.play();
+          createHearts();
+          touchMeButton.style.display = 'none';
         });
+
+        function createHearts() {
+          var container = document.querySelector('.container');
+
+          for (var i = 0; i < 3; i++) {
+            var heart = document.createElement('div');
+            heart.classList.add('heart');
+            heart.style.top = Math.random() * 100 + 'vh';
+            heart.style.left = Math.random() * 100 + 'vw';
+
+            container.appendChild(heart);
+          }
+        }
       });
     </script>
   </body>
